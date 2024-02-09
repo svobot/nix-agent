@@ -5,7 +5,7 @@
 
   outputs = { self, nixpkgs }: {
     packages.x86_64-linux.kolide-launcher =
-      with import nixpkgs { system = "x86_64-linux"; };
+      with import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
       stdenv.mkDerivation rec {
         pname = "kolide-launcher";
         version = "1.5.3";
